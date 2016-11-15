@@ -1,6 +1,6 @@
 function retrieveData() {
-	loadWebResource("sw_json2");
-	loadWebResource("sw_SDK.REST.js");
+	loadWebResource("sw_libraries/JSON2");
+	loadWebResource("sw_libraries/SDK.REST.js");
 
     // Setup confirmation dialog
     var copyDescription = confirm("Would you like to copy line items from another opportunity? (Will remove current items and set Revenue to 'System Calculated' if required)");
@@ -57,9 +57,6 @@ function userConfirmsCopyDescription() {
             // Get the guid and name
             var recordId = selectedOpportunity.items[0].id;
             var recordName = selectedOpportunity.items[0].name;
- 
-            // function to remove the current items
-            getCurrentOpportunityLineItems();
 
             // OData URI query to get the selected opps line items
                 var oDataURILineItems = Xrm.Page.context.getClientUrl()
@@ -157,9 +154,14 @@ function informationRetrieved(record) {
     console.log(opportunityListItemArray);
     var existingOppPrice = record.PriceLevelId;
 
+    // If there's no line items in the target opp then display an error message and stop
     if (opportunityListItemArray.length == 0) {
         noOpportunitiesInTargetOp();
         return null;
+    // If there is line items then delete the current items.
+    } else {
+        // function to remove the current items
+        getCurrentOpportunityLineItems();
     }
 
     var priceList = new Array();
