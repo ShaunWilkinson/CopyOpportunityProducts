@@ -42,6 +42,7 @@ I'm happy to extend this if I get any requests for new functionality, I can be r
 
 * * *
 
+## Donations
 If you've found this solution useful feel free to drop some pennies my way -
 
-PayPal - [https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BS3SEUPQDJF4Q](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BS3SEUPQDJF4Q "PayPal Donation Link")
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/ShaunWilkinson95)
